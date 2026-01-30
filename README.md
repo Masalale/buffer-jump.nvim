@@ -9,7 +9,7 @@ LunarVim-style buffer picker for LazyVim. Jump to any buffer with a single keypr
 - **Number keys**: Press 1-9 to jump to buffers by position
 - **Session aware**: Shows all session-restored buffers, even if not yet loaded
 - **Configurable**: Customize colors, dimensions, and border style
-- **Cursor navigation**: Use `j`/`k` to navigate the list without triggering buffer switches
+- **Vim-native navigation**: Standard `j`/`k` work as expected (cursor movement in the popup)
 
 ## Installation
 
@@ -42,11 +42,12 @@ use {
 | Key | Action |
 |-----|--------|
 | `<leader>bj` | Open buffer picker |
-| `[letter]` | Jump to buffer with that letter |
+| `[letter]` | Jump to buffer with that letter (case-insensitive) |
 | `1-9` | Jump to buffer by position |
-| `<CR>` | Jump to selected buffer |
-| `j/k` | Navigate up/down |
+| `<CR>` | Jump to currently selected buffer |
 | `q` / `<Esc>` | Close picker |
+
+> **Note**: All letter keys work for buffer switching. Standard Vim navigation (`j`/`k`) works as expected in the popup for cursor movement.
 
 ## Configuration
 
