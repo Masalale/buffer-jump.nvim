@@ -149,19 +149,16 @@ function M.jump_to_buffer()
     silent = true
   })
 
-  for _, item in ipairs(buffer_list) do
-    -- Skip J and K to reserve them for cursor navigation
-    if item.key ~= "J" and item.key ~= "K" then
-      vim.api.nvim_buf_set_keymap(menu_buf, "n", item.key, "", {
-        callback = function() switch_to_buffer(item.buf) end,
-        noremap = true, silent = true
-      })
-      vim.api.nvim_buf_set_keymap(menu_buf, "n", item.key:lower(), "", {
-        callback = function() switch_to_buffer(item.buf) end,
-        noremap = true, silent = true
-      })
-    end
-  end
+   for _, item in ipairs(buffer_list) do
+     vim.api.nvim_buf_set_keymap(menu_buf, "n", item.key, "", {
+       callback = function() switch_to_buffer(item.buf) end,
+       noremap = true, silent = true
+     })
+     vim.api.nvim_buf_set_keymap(menu_buf, "n", item.key:lower(), "", {
+       callback = function() switch_to_buffer(item.buf) end,
+       noremap = true, silent = true
+     })
+   end
 
   for i, item in ipairs(buffer_list) do
     if i <= 9 then
