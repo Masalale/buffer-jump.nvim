@@ -13,15 +13,7 @@ LunarVim-style buffer picker for LazyVim. Jump to any buffer with a single keypr
 
 ## Installation
 
-### As a LazyVim Extra
-
-Add to your `lazy.lua` spec:
-
-```lua
-{ import = "plugins.extras.buffer-jump.spec" }
-```
-
-### Standalone
+### With lazy.nvim (Recommended)
 
 ```lua
 {
@@ -30,6 +22,18 @@ Add to your `lazy.lua` spec:
     { "<leader>bj", function() require("buffer-jump").jump_to_buffer() end, desc = "Jump to Buffer" },
   },
   opts = {},
+}
+```
+
+### With packer.nvim
+
+```lua
+use {
+  'Masalale/buffer-jump.nvim',
+  config = function()
+    require('buffer-jump').setup()
+    vim.keymap.set('n', '<leader>bj', function() require('buffer-jump').jump_to_buffer() end, { desc = 'Jump to Buffer' })
+  end
 }
 ```
 
