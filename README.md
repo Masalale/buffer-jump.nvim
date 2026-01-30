@@ -7,9 +7,9 @@ LunarVim-style buffer picker for LazyVim. Jump to any buffer with a single keypr
 - **Letter-key selection**: Each buffer shows a highlighted letter - press it to jump instantly
 - **Visual indicators**: Modified buffers show `•`, unloaded session buffers show `○`
 - **Number keys**: Press 1-9 to jump to buffers by position
-- **Minimap compatible**: Works seamlessly with neominimap.nvim
 - **Session aware**: Shows all session-restored buffers, even if not yet loaded
 - **Configurable**: Customize colors, dimensions, and border style
+- **Cursor navigation**: Use `j`/`k` to navigate the list without triggering buffer switches
 
 ## Installation
 
